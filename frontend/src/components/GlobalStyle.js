@@ -20,10 +20,11 @@ const GlobalStyle = createGlobalStyle`
         padding: 1rem 2rem;
         background: transparent;
         color: yellow;
-        border: 3px solid #416cd5;
+        border: 2px solid #5d88f0;
+        border-radius: 4px;
         transition: all 0.5s ease;
         &:hover{
-            background-color: #23d997;
+            background-color: #5d88f0;
             color: white;
         }
     }
@@ -49,11 +50,11 @@ const GlobalStyle = createGlobalStyle`
 
     span{
         font-weight: lighter;
-        color: #416cd5;
+        color: #5d88f0;
     }
 
     p{
-        padding: 3rem;
+        padding: 3rem 1rem;
         color: #ccc;
         font-size: 1.4rem;
         line-height: 150%;

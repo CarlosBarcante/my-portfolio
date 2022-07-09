@@ -1,41 +1,57 @@
 import React from "react";
 import styled from "styled-components";
-import { Description } from '../styles'
+import { Container, Description } from '../styles'
+
+// import icons
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Link } from 'react-router-dom';
 
 function ServiceSection() {
     return (
-        <Services>
-            <h2>Sobre mim</h2>
-            <Cards>
-                <Card>
-                    <div className="icon">
-                        Icone
-                        <h3>Github</h3>
-                    </div>
-                    <p>Dê uma olhada no meu portifólio.</p>
-                </Card>
-                <Card>
-                    <div className="icon">
-                        Icone
-                        <h3>LinkedIn</h3>
-                    </div>
-                    <p>Dê uma olhada no meu perfil no LinkedIn.</p>
-                </Card>
-                <Card>
-                    <div className="icon">
-                        Icone
-                        <h3>Cursos</h3>
-                    </div>
-                    <p>Dê uma olhada nos cursos que fiz.</p>
-                </Card>
-            </Cards>
-        </Services>
+        <Container>
+            <Services>
+                <h2>Sobre <span>mim</span></h2>
+                <Cards>
+                    <Card>
+                        <a href='https://github.com/CarlosBarcante'>
+                            <div className="icon">
+                                <FontAwesomeIcon icon={faGithubSquare} size='4x' />
+                                <h3>Github</h3>
+                            </div>
+                        </a>
+                        <p>Dê uma olhada no meu perfil do Github.</p>
+                    </Card>
+                    <Card>
+                        <a href='https://www.linkedin.com/in/carlos-eduardo-barçante-8500b6241/'>
+                            <div className="icon">
+                                <FontAwesomeIcon icon={faLinkedin} size='4x' />
+                                <h3>LinkedIn</h3>
+                            </div>
+                        </a>
+                        <p>Dê uma olhada no meu perfil do LinkedIn.</p>
+                    </Card>
+                    <Card>
+                        <Link to='/courses'>
+                            <div className="icon">
+                                <FontAwesomeIcon icon={faGraduationCap} size='4x' />
+                                <h3>Cursos</h3>
+                            </div>
+                        </Link>
+                        <p>Dê uma olhada nos cursos que fiz.</p>
+                    </Card>
+                </Cards>
+            </Services>
+        </Container>
     )
 }
 
 const Services = styled(Description)`
     h2{
         padding-bottom: 4rem;
+        text-align: center;
     }
     p{
         width: 70%;
@@ -52,16 +68,32 @@ const Cards = styled.div`
 
 const Card = styled.div`
     flex-basis: 10rem;
+    a{
+        text-decoration: none;
+    }
     .icon{
+        color: #5d88f0;
         padding: 0.5rem;
         display: flex;
         align-items: center;
         h3{
             margin-left: 1rem;
-            background-color: white;
+            background-color: #5d88f0;
+            border-radius: 5px;
             color: black;
             padding: 1rem;
         }
+        &:hover{
+            color: yellow;
+            transform: scale(1.05);
+            h3{
+                background-color: yellow;
+            }
+        }
+    }
+    p{
+        font-size: 1rem;
+        width: 100%;
     }
 `;
 

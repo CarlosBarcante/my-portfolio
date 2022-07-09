@@ -1,17 +1,20 @@
 import React from "react";
-import { Description } from '../styles';
+import { Container, Description } from '../styles';
 
 function AboutSection() {
     return (
-        <Description>
-            <h2>Carlos Barçante</h2>
-            <h2>Desenvolvedor Web</h2>
-            <p>
-                Eu sou um Desenvolvedor Web Júnior que entrou para a área de programação pela curiosidade de descobrir como as tecnologias funcionam, e acabei me apaixonando pela área.<br />
-                Algumas das tecnologias que tenho interesse em trabalhar: HTML, CSS, Javascript, React, Node.js, MongoDB.
-            </p>
-            <button>Contato</button>
-        </Description>
+        <Container>
+            <Description>
+                <h2>Carlos Barçante</h2>
+                <h2>Desenvolvedor Web</h2>
+                <p>
+                    Desenvolvedor Web, tendo iniciado o aprendizado em desenvolvimento em 2021.
+                    Estou sempre disposto a aprender novas tecnologias.
+                    Algumas das tecnologias que tenho interesse em trabalhar são: HTML, CSS, Javascript, React, Node.js, MongoDB.
+                </p>
+                <button>Contato</button>
+            </Description>
+        </Container>
     )
 }
 
