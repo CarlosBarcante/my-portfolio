@@ -4,7 +4,7 @@ import { Container, Description } from '../styles'
 
 // import icons
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Link } from 'react-router-dom';
@@ -36,7 +36,7 @@ function ServiceSection() {
                     <Card>
                         <Link to='/courses'>
                             <div className="icon">
-                                <FontAwesomeIcon icon={faGraduationCap} size='4x' />
+                                <FontAwesomeIcon icon={faLaptopCode} size='4x' />
                                 <h3>Cursos</h3>
                             </div>
                         </Link>

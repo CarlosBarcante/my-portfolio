@@ -67,10 +67,10 @@ const Social = styled.div`
                 border-radius: 7px 50px;
             }
             &:hover{
-                color: yellow;
-                transform: scale(1.05);
-                   h3{
-                    background-color: yellow;
+                color: #5d88f0;
+                transform: scale(1.09);
+                h3{
+                    background-color: #5d88f0;
                 }
             }
         }

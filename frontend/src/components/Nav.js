@@ -11,7 +11,7 @@ function Nav() {
             <Link to='/'><h1>Carlos Barçante</h1></Link>
             <ul>
                 <Link to='/'><li>Sobre Mim</li></Link>
-                <Link to='/portfolio'><li>Portifólio</li></Link>
+                <Link to='/portfolio'><li>Portfólio</li></Link>
                 <Link to='/contact'><li>Contato</li></Link>
             </ul>
         </StyledNav>
@@ -21,19 +21,21 @@ function Nav() {
 const StyledNav = styled.nav`
     min-height: 10vh;
     display: flex;
-    padding: 1rem 2rem;
-    justify-content: space-between;
+    padding: .5rem 2rem;
+    justify-content: space-around;
     align-items: center;
     background-color: #282828;
     position: sticky;
     top: 0;
+    z-index: 3;
     a{
         text-decoration: none;
         color: #ccc;
 
     }
     h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
+        font-weight: 600;
     }
     ul{
         display: flex;
@@ -41,7 +43,8 @@ const StyledNav = styled.nav`
             margin-right: 5rem;
         }
         li{
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 300;
             &:hover{
                 color: #5d88f0;
             }

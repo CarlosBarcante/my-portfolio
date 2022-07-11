@@ -35,15 +35,10 @@ const GlobalStyle = createGlobalStyle`
     }
     
     h3{
-        color: white;
+        color: #5d88f0;
+        font-size: 1.5rem;
     }
 
-    h4{
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: lightgrey;
-    }
-    
     a{
         font-size: 1.1rem;
     }
@@ -54,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     p{
-        padding: 3rem 1rem;
+        padding: 3rem 0;
         color: #ccc;
         font-size: 1.4rem;
         line-height: 150%;
