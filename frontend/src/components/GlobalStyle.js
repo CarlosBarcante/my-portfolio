@@ -19,19 +19,20 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         padding: 1rem 2rem;
         background: transparent;
-        color: yellow;
+        color: #5d88f0;
         border: 2px solid #5d88f0;
         border-radius: 4px;
         transition: all 0.5s ease;
         &:hover{
             background-color: #5d88f0;
-            color: white;
+            color: black;
         }
     }
 
     h2{
         font-weight: lighter;
         font-size: 4rem;
+        color: yellow;
     }
     
     h3{

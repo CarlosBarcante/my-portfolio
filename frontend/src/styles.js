@@ -6,11 +6,8 @@ export const Container = styled.div`
 `;
 
 export const Description = styled.div`
-    min-height: 90vh;
-    padding: 5rem 10rem;
-    z-index: 2;
-    h2{
-        font-weight: lighter;
-        color: yellow;
-    }
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
 `;
