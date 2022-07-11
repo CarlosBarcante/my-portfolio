@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server.js",
-    "client": "cd frontend && npm start",
+    "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [
     "Full Stack",

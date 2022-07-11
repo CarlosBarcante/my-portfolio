@@ -16,7 +16,7 @@ A aplicação consiste em um site pessoal, com informações úteis sobre o dese
 - MongoDB
 
 ### Front-end
-- Em desenvolvimento (React) 
+- Em desenvolvimento (React, styled components) 
 
 # Autor
 
