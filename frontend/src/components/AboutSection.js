@@ -51,7 +51,7 @@ const AboutContainer = styled(Container)`
 
     #description{
         button{
-            width: 40%;
+            width: 200px;
         }
     }
     

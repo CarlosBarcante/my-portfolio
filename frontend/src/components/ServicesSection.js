@@ -16,7 +16,7 @@ function ServiceSection() {
                 <h2>Sobre <span>mim</span></h2>
                 <Cards>
                     <Card>
-                        <a href='https://github.com/CarlosBarcante'>
+                        <a href='https://github.com/CarlosBarcante' target="_blank" rel="noreferrer">
                             <div className="icon">
                                 <FontAwesomeIcon icon={faGithubSquare} size='4x' />
                                 <h3>Github</h3>
@@ -25,7 +25,7 @@ function ServiceSection() {
                         <p>Dê uma olhada no meu perfil do Github.</p>
                     </Card>
                     <Card>
-                        <a href='https://www.linkedin.com/in/carlos-eduardo-barçante-8500b6241/'>
+                        <a href='https://www.linkedin.com/in/carlos-eduardo-barçante-8500b6241/' target="_blank" rel="noreferrer">
                             <div className="icon">
                                 <FontAwesomeIcon icon={faLinkedin} size='4x' />
                                 <h3>LinkedIn</h3>
