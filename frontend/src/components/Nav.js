@@ -9,21 +9,21 @@ import { Link } from 'react-router-dom';
 function Nav() {
     return (
         <StyledNav>
-            <div id="container">
+            <Container id="container">
                 <Link to='/'><h1>Carlos Barçante</h1></Link>
                 <ul>
                     <Link to='/'><li>Sobre Mim</li></Link>
                     <Link to='/portfolio'><li>Portfólio</li></Link>
                     <Link to='/contact'><li>Contato</li></Link>
                 </ul>
-            </div>
+            </Container>
         </StyledNav>
     )
 }
 
 const StyledNav = styled.nav`
     background-color: #282828;
-    padding: .5rem 5rem;
+    padding: .5rem 0;
     
     #container{
         display: flex;

@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "./PortfolioCard";
+import { useApi } from "../hooks/useApi";
 
 function CardList() {
+    const { data } = useApi('/portfolio');
+
     return (
         <StyledCardList>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {data?.data?.data?.map(project => {
+                return (<Card key={project.slug} project={project} />);
+            })}
         </StyledCardList>
     )
 }

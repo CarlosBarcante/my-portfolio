@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function Card() {
+function Card({ project }) {
     return (
         <StyledCard>
             <img alt="development" src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
             <div className="info">
-                <h4>Title</h4>
-                <p>Short Description.</p>
+                <h4>{project.title}</h4>
+                <p>{project.description}</p>
             </div>
         </StyledCard>
     )

@@ -14,7 +14,7 @@ function AboutSection() {
                 <h2>Carlos Barçante</h2>
                 <h3>Desenvolvedor Full Stack</h3>
                 <p>
-                    Desenvolvedor Web, tendo iniciado o aprendizado em desenvolvimento em 2021.
+                    Desenvolvedor Full Stack, tendo iniciado o aprendizado em desenvolvimento em 2021.
                     Estou sempre disposto a aprender novas tecnologias.
                     Algumas das tecnologias que tenho interesse em trabalhar são:
                 </p>
