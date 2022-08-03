@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Card({ project }) {
     return (
         <StyledCard>
-            <img alt="development" src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <img alt="development" src={project.image} />
             <div className="info">
                 <h4>{project.title}</h4>
                 <p>{project.description}</p>
@@ -15,9 +15,9 @@ function Card({ project }) {
 
 const StyledCard = styled.div`
     min-height: 40vh;
+    max-height: 65vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     border: 2px solid #5d88f0;
     border-radius: 1rem;
     cursor: pointer;
@@ -26,19 +26,27 @@ const StyledCard = styled.div`
     box-shadow: -4px 4px 15px yellow;
 
     img{
-        height: 100%;
+        height: 60%;
         width: 100%;
     }
 
     .info{
+        height: 40%;
         display: flex;
-        justify-content: space-between;
         flex-direction: column;
+        justify-content: start;
         text-align: left;
-        padding: .5rem;
         background-color: #ccc;
+        padding: .5rem;
+        h4{
+            font-size: 1.2rem;
+        }
         p{
+            font-size: 1.2rem;
             color: black;
+            padding: 0 0;
+            margin-top: .5rem;
+            overflow: hidden;
         }
     }
 `;

@@ -12,9 +12,7 @@ function Portfolio() {
 }
 
 const PortfolioContainer = styled(Container)`
-    max-width: none;
     min-height: 90vh;
-    padding: 5rem 5rem;
 `;
 
 export default Portfolio;

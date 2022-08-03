@@ -22,17 +22,18 @@ function Nav() {
 }
 
 const StyledNav = styled.nav`
+    position: relative;
     background-color: #282828;
-    padding: .5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 3;
     
     #container{
+        padding: .5rem 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         
-        position: sticky;
-        top: 0;
-        z-index: 3;
         a{
             text-decoration: none;
             color: #ccc;

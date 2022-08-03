@@ -47,7 +47,6 @@ const AboutContainer = styled(Container)`
     z-index: 2;
     display: flex;
     align-items: flex-start;
-    padding: 5rem 0;
 
     #description{
         button{

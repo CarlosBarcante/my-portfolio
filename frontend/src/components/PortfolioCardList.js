@@ -8,7 +8,7 @@ function CardList() {
 
     return (
         <StyledCardList>
-            {data?.data?.data?.map(project => {
+            {data?.data?.map(project => {
                 return (<Card key={project.slug} project={project} />);
             })}
         </StyledCardList>

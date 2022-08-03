@@ -18,7 +18,6 @@ function Contact() {
 }
 
 const ContactContainer = styled(Container)`
-    padding: 1rem 0;
     h2{
         color: yellow;
         margin-bottom: 4rem;
