@@ -48,9 +48,6 @@ function SocialNetworkSection() {
 const Social = styled.div`
     flex: 1;
     .card{
-        a{
-            text-decoration: none;
-        }
         .icon{
             color: #ccc;
             margin-bottom: 0.5rem;
@@ -68,7 +65,7 @@ const Social = styled.div`
             }
             &:hover{
                 color: #5d88f0;
-                transform: scale(1.09);
+                transform: scale(1.05);
                 h3{
                     background-color: #5d88f0;
                 }

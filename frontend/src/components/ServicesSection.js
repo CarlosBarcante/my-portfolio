@@ -68,14 +68,13 @@ const Cards = styled.div`
 
 const Card = styled.div`
     flex-basis: 10rem;
-    a{
-        text-decoration: none;
-    }
+
     .icon{
         color: #5d88f0;
         padding: 0.5rem;
         display: flex;
         align-items: center;
+
         h3{
             margin-left: 1rem;
             background-color: #5d88f0;
@@ -83,14 +82,17 @@ const Card = styled.div`
             color: black;
             padding: 1rem;
         }
+
         &:hover{
             color: yellow;
             transform: scale(1.05);
+
             h3{
                 background-color: yellow;
             }
         }
     }
+    
     p{
         font-size: 1rem;
         width: 100%;

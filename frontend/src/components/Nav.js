@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
     z-index: 3;
     
     #container{
-        padding: .5rem 1rem;
+        padding: .5rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;

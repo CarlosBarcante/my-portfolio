@@ -19,7 +19,7 @@ const StyledCardList = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 2rem;
-    grid-row-gap: 5rem;
+    grid-row-gap: 3rem;
 `;
 
 export default CardList;
