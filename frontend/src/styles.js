@@ -4,6 +4,10 @@ export const Container = styled.div`
     max-width: 1500px;
     margin: 0 auto;
     padding: 3rem 2rem;
+
+    @media (max-width: 1000px) {
+        max-width: 100vw;
+    }
 `;
 
 export const Description = styled.div`

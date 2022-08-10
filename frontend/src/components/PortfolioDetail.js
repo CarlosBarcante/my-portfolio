@@ -16,19 +16,17 @@ function PortfolioDetail() {
                     <p>{data?.data?.description}</p>
                 </div>
                 <div id="icons">
-                    <div className="icon">
-                        <FontAwesomeIcon icon={["fab", "react"]} size='3x' /> React
-                    </div>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={["fab", "node-js"]} size='3x' /> Node
-                    </div>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={["fas", "database"]} size='3x' /> MongoDB
-                    </div>
+                    {data?.data?.technologies.map(tech => {
+                        return (
+                            <div className="icon" key={tech.label}>
+                                <FontAwesomeIcon icon={[tech.iconType, tech.icon]} size='3x' /> {tech.label}
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
             <div id="description">
-                <p>Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description Long Description</p>
+                <p>{data?.data?.longDescription}</p>
             </div>
             <img src={data?.data?.image} alt="exemplo" />
         </Detail>
@@ -36,11 +34,11 @@ function PortfolioDetail() {
 }
 
 const Detail = styled.div`
-    width: 70vw;
+    width: 80vw;
     min-height: 80vh;
     position: absolute;
     top: 12%;
-    left: 15%;
+    left: 10%;
     z-index: 10;
     border: 1px solid yellow;
     box-shadow: 0px 5px 14px yellow;
@@ -84,6 +82,9 @@ const Detail = styled.div`
             }
         }
         
+        @media (max-width: 800px) {
+            flex-direction: column;
+        }
     }
 
     #description{
@@ -96,8 +97,12 @@ const Detail = styled.div`
 
     img{
         width: 100%;
-        object-fit: cover;
+        object-fit: fill;
         height: 55vh;
+
+        @media (max-width: 800px) {
+            height: 30vh;
+        }
     }
 `;
 

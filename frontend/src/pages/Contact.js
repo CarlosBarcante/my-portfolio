@@ -27,6 +27,10 @@ const ContactContainer = styled(Container)`
     #contact-area{
         display: flex;
         align-items: center;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+        }
     }
 `;
 

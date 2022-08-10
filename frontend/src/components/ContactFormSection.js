@@ -50,8 +50,9 @@ const Form = styled.form`
     }
 
     button{
-        max-width: 30%;
+        width: 40%;
         margin: auto;
+        text-align: center;
         border-color: #ccc;
         color: #ccc;
 
@@ -59,6 +60,10 @@ const Form = styled.form`
             background-color: #ccc;
             color: black;
         }
+    }
+
+    @media (max-width: 800px){
+        margin-bottom: 20px;
     }
 `;
 

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const slug = require('slug');
 const Portfolio = require('../models/Portfolio');
 
 //Create
@@ -8,7 +7,9 @@ router.post('/', async (req, res) => {
     const portfolio = new Portfolio({
         title: req.body.title,
         description: req.body.description,
-        image: req.body.image
+        longDescription: req.body.longDescription,
+        image: req.body.image,
+        technologies: req.body.technologies
     })
     try {
         let doc = await portfolio.save();
@@ -57,15 +58,16 @@ router.get('/:slug', async (req, res) => {
 
 //Update
 router.patch('/:slug', async (req, res) => {
-    const newSlug = function () { return slug(req.body.title) };
     try {
         const doc = await Portfolio.updateOne(
             { slug: req.params.slug },
             {
                 title: req.body.title,
                 description: req.body.description,
+                longDescription: req.body.longDescription,
                 image: req.body.image,
-                slug: newSlug()
+                slug: req.body.slug,
+                technologies: req.body.technologies
             })
         res.json({
             success: true,

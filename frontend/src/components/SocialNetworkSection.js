@@ -70,6 +70,12 @@ const Social = styled.div`
                     background-color: #5d88f0;
                 }
             }
+
+            @media (max-width: 800px) {
+                h3{
+                    min-width: 70%;
+                }
+            }
         }
     }
         

@@ -35,7 +35,6 @@ const StyledNav = styled.nav`
         align-items: center;
         
         a{
-            text-decoration: none;
             color: #ccc;
 
         }
@@ -55,6 +54,16 @@ const StyledNav = styled.nav`
                     color: #5d88f0;
                 }
             }
+            @media (max-width: 600px) {
+                align-self: flex-start;
+                a{
+                    margin: 0.5rem 1rem;
+                }
+            }
+        }
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
         }
     }
 `;
