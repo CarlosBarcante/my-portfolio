@@ -1,37 +1,57 @@
 import React from "react";
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useApi } from "../hooks/useApi";
 
 function PortfolioDetail() {
+    const navigate = useNavigate();
     const { slug } = useParams();
     const { data } = useApi(`/portfolio/${slug}`);
 
+    function exitDetailHandle(e) {
+        const element = e.target;
+        if (element.classList.contains('shadow')) {
+            navigate('../portfolio', { replace: true })
+        }
+    }
+
     return (
-        <Detail>
-            <div id="detail-header">
-                <div>
-                    <h4>{data?.data?.title}</h4>
-                    <p>{data?.data?.description}</p>
+        <Shadow className="shadow" onClick={exitDetailHandle}>
+            <Detail>
+                <div id="detail-header">
+                    <div>
+                        <h4>{data?.data?.title}</h4>
+                        <p>{data?.data?.description}</p>
+                    </div>
+                    <div id="icons">
+                        {data?.data?.technologies.map(tech => {
+                            return (
+                                <div className="icon" key={tech.label}>
+                                    <FontAwesomeIcon icon={[tech.iconType, tech.icon]} size='3x' /> {tech.label}
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-                <div id="icons">
-                    {data?.data?.technologies.map(tech => {
-                        return (
-                            <div className="icon" key={tech.label}>
-                                <FontAwesomeIcon icon={[tech.iconType, tech.icon]} size='3x' /> {tech.label}
-                            </div>
-                        )
-                    })}
+                <div id="description">
+                    <p>{data?.data?.longDescription}</p>
                 </div>
-            </div>
-            <div id="description">
-                <p>{data?.data?.longDescription}</p>
-            </div>
-            <img src={data?.data?.image} alt="exemplo" />
-        </Detail>
+                <img src={data?.data?.image} alt="exemplo" />
+            </Detail>
+        </Shadow>
     )
 }
+
+const Shadow = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+`;
 
 const Detail = styled.div`
     width: 80vw;

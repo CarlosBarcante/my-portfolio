@@ -1,20 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import moment from 'moment';
 import styled from "styled-components";
 
 function ContactFormSection() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    function submitContactMe(e) {
+        const data = {
+            Nome: name,
+            Email: email,
+            Mensagem: message,
+            Data: moment().format('DD/MM/YYYY')
+        }
+        console.log(data.Data);
+    }
+
     return (
-        <Form method="post">
+        <Form onSubmit={submitContactMe}>
             <div>
                 <label>Nome:</label>
-                <input type="text" placeholder="Seu nome" />
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => { setName(e.target.value) }}
+                    placeholder="Seu nome"
+                />
             </div>
             <div>
                 <label>Email:</label>
-                <input type="email" placeholder="Seu email" />
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => { setEmail(e.target.value) }}
+                    placeholder="Seu email"
+                />
             </div>
             <div>
                 <label>Menssagem:</label>
-                <textarea rows="5" placeholder="Sua menssagem" />
+                <textarea
+                    rows="5"
+                    value={message}
+                    onChange={(e) => { setMessage(e.target.value) }}
+                    placeholder="Sua menssagem"
+                />
             </div>
             <button type="submit">Enviar</button>
         </Form>
