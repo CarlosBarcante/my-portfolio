@@ -1,20 +1,33 @@
 import React, { useState } from "react";
 import moment from 'moment';
+
 import styled from "styled-components";
+
+import { save } from '../services/Sheet';
 
 function ContactFormSection() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
+    function resetForm() {
+        setName('');
+        setEmail('');
+        setMessage('');
+    }
+
     function submitContactMe(e) {
+        e.preventDefault();
+
         const data = {
             Nome: name,
             Email: email,
             Mensagem: message,
             Data: moment().format('DD/MM/YYYY')
         }
-        console.log(data.Data);
+
+        save(data);
+        resetForm();
     }
 
     return (
@@ -47,6 +60,8 @@ function ContactFormSection() {
                 />
             </div>
             <button type="submit">Enviar</button>
+            <h4>Mensagem enviada com sucesso!</h4>
+            <h4>Ocorreu um erro, tente novamente.</h4>
         </Form>
     )
 }
@@ -81,7 +96,7 @@ const Form = styled.form`
 
     button{
         width: 40%;
-        margin: auto;
+        align-self: flex-end;
         text-align: center;
         border-color: #ccc;
         color: #ccc;
