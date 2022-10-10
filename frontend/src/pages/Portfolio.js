@@ -6,6 +6,7 @@ import { pageAnimation } from '../animations/pageAnimation';
 import styled from "styled-components";
 import { Container } from "../styles";
 
+import ScrollTop from "../components/ScrollTop";
 import CardList from "../components/PortfolioCardList";
 import PortfolioDetail from "../components/PortfolioDetail";
 
@@ -22,6 +23,7 @@ function Portfolio() {
         >
             {slug && <PortfolioDetail />}
             <CardList />
+            <ScrollTop />
         </PortfolioContainer>
     )
 }
