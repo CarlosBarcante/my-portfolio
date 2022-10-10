@@ -60,8 +60,6 @@ function ContactFormSection() {
                 />
             </div>
             <button type="submit">Enviar</button>
-            <h4>Mensagem enviada com sucesso!</h4>
-            <h4>Ocorreu um erro, tente novamente.</h4>
         </Form>
     )
 }

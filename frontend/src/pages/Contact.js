@@ -1,13 +1,22 @@
 import React from "react";
+
+import { pageAnimation } from '../animations/pageAnimation';
+
 import styled from "styled-components";
 import { Container } from '../styles'
+
 import SocialNetworkSection from "../components/SocialNetworkSection";
 import ContactFormSection from "../components/ContactFormSection";
 
 
 function Contact() {
     return (
-        <ContactContainer>
+        <ContactContainer
+            initial='hidden'
+            animate='show'
+            exit='exit'
+            variants={pageAnimation}
+        >
             <h2>Entre em contato</h2>
             <div id="contact-area">
                 <ContactFormSection />
