@@ -34,12 +34,12 @@ const StyledCard = styled.div`
         flex-direction: column;
 
         img{
-            height: 70%;
+            height: 65%;
             width: 100%;
         }
 
         .info{
-            height: 30%;
+            height: 35%;
             display: flex;
             flex-direction: column;
             justify-content: start;
