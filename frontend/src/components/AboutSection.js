@@ -1,4 +1,9 @@
 import React from "react";
+
+import { motion } from 'framer-motion';
+import { titleAnimation } from "../animations/titleAnimation";
+import { fadeInAnimation } from "../animations/fadeInAnimation";
+
 import { Container, Description } from '../styles';
 import styled from "styled-components";
 
@@ -12,15 +17,21 @@ function AboutSection() {
         <AboutContainer>
             <Description id="description">
                 <div id="introduction">
-                    <h2>Carlos Barçante</h2>
-                    <h3>Desenvolvedor Full Stack</h3>
-                    <p>
+                    <motion.div variants={titleAnimation}>
+                        <h2>Carlos Barçante</h2>
+                        <h3>Desenvolvedor Full Stack</h3>
+                    </motion.div>
+
+                    {/* <motion.h2 variants={titleAnimation}>Carlos Barçante</motion.h2>
+                    <motion.h3 variants={titleAnimation}>Desenvolvedor Full Stack</motion.h3> */}
+
+                    <motion.p variants={fadeInAnimation}>
                         Desenvolvedor Full Stack, tendo iniciado o aprendizado em desenvolvimento em 2021.
                         Estou sempre disposto a aprender novas tecnologias.
                         Algumas das tecnologias que tenho interesse em trabalhar são:
-                    </p>
+                    </motion.p>
                 </div>
-                <div id="cards">
+                <motion.div id="cards" variants={fadeInAnimation}>
                     <div className="card">
                         <FontAwesomeIcon icon={faJsSquare} size="4x" />
                         <h4>Javascript</h4>
@@ -37,9 +48,9 @@ function AboutSection() {
                         <FontAwesomeIcon icon={faDatabase} size="4x" />
                         <h4>MongoDB</h4>
                     </div>
-                </div>
+                </motion.div>
             </Description>
-            <button>Contato</button>
+            <motion.button variants={fadeInAnimation}>Contato</motion.button>
         </AboutContainer>
     )
 }
