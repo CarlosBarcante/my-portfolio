@@ -6,7 +6,6 @@ export const fadeInAnimation = {
         opacity: 1,
         transition: {
             duration: 0.75,
-            ease: 'easeOut'
         }
     }
 }

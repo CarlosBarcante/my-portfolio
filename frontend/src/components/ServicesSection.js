@@ -1,4 +1,9 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
+import { scrollAnimation } from "../animations/scrollAnimation";
+import { useScroll } from "../hooks/useScroll";
+
 import styled from "styled-components";
 import { Container, Description } from '../styles'
 
@@ -7,11 +12,18 @@ import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Link } from 'react-router-dom';
+
 
 function ServiceSection() {
+    const [ref, controls] = useScroll();
+
     return (
-        <Container>
+        <ServiceContainer
+            variants={scrollAnimation}
+            animate={controls}
+            initial='hidden'
+            ref={ref}
+        >
             <Services>
                 <h2>Sobre <span>mim</span></h2>
                 <Cards>
@@ -44,9 +56,16 @@ function ServiceSection() {
                     </Card>
                 </Cards>
             </Services>
-        </Container>
+        </ServiceContainer>
     )
 }
+
+const ServiceContainer = styled(Container)`
+    min-height: 100vh;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+`;
 
 const Services = styled(Description)`
     h2{
@@ -92,7 +111,7 @@ const Card = styled.div`
             }
         }
     }
-    
+
     p{
         font-size: 1rem;
         width: 100%;

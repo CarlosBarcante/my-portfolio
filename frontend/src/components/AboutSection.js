@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from 'framer-motion';
 import { titleAnimation } from "../animations/titleAnimation";
 import { fadeInAnimation } from "../animations/fadeInAnimation";
+import { scrollAnimation } from "../animations/scrollAnimation";
+import { useScroll } from "../hooks/useScroll";
 
 import { Container, Description } from '../styles';
 import styled from "styled-components";
@@ -13,8 +15,15 @@ import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function AboutSection() {
+    const [ref, controls] = useScroll();
+
     return (
-        <AboutContainer>
+        <AboutContainer
+            variants={scrollAnimation}
+            animate={controls}
+            initial='hidden'
+            ref={ref}
+        >
             <Description id="description">
                 <div id="introduction">
                     <motion.div variants={titleAnimation}>
@@ -50,17 +59,16 @@ function AboutSection() {
                     </div>
                 </motion.div>
             </Description>
-            <motion.button variants={fadeInAnimation}>Contato</motion.button>
         </AboutContainer>
     )
 }
 
 const AboutContainer = styled(Container)`
-    min-height: 90vh;
+    min-height: 99vh;
     z-index: 2;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     #description{
         width:100%;
@@ -98,16 +106,6 @@ const AboutContainer = styled(Container)`
 
         @media(max-width: 1000px){
             flex-direction: column;
-        }
-    }
-    button{
-        align-self: flex-start;
-        width: 200px;
-    }
-
-    @media(max-width: 500px){
-        button{
-            align-self: center;
         }
     }
 `;
