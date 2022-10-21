@@ -7,7 +7,7 @@ import ScrollTop from '../components/ScrollTop';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
 
-function AboutUs() {
+function Home() {
     return (
         <motion.div
             initial='hidden'
@@ -22,4 +22,4 @@ function AboutUs() {
     )
 }
 
-export default AboutUs;
+export default Home;

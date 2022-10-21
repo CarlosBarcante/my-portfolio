@@ -24,8 +24,7 @@ function ServiceSection() {
             initial='hidden'
             ref={ref}
         >
-            <Services>
-                <h2>Sobre <span>mim</span></h2>
+            <Description>
                 <Cards>
                     <Card>
                         <a href='https://github.com/CarlosBarcante' target="_blank" rel="noreferrer">
@@ -46,16 +45,16 @@ function ServiceSection() {
                         <p>Dê uma olhada no meu perfil do LinkedIn.</p>
                     </Card>
                     <Card>
-                        <Link to='/courses'>
+                        <Link to='/contact'>
                             <div className="icon">
                                 <FontAwesomeIcon icon={faLaptopCode} size='4x' />
-                                <h3>Cursos</h3>
+                                <h3>Contato</h3>
                             </div>
                         </Link>
                         <p>Dê uma olhada nos cursos que fiz.</p>
                     </Card>
                 </Cards>
-            </Services>
+            </Description>
         </ServiceContainer>
     )
 }
@@ -65,17 +64,6 @@ const ServiceContainer = styled(Container)`
     z-index: 2;
     display: flex;
     align-items: center;
-`;
-
-const Services = styled(Description)`
-    h2{
-        padding-bottom: 4rem;
-        text-align: center;
-    }
-    p{
-        width: 70%;
-        padding: 2rem 0.5rem 4rem 0.5rem;
-    }
 `;
 
 const Cards = styled.div`
@@ -89,25 +77,25 @@ const Card = styled.div`
     flex-basis: 10rem;
 
     .icon{
-        color: #5d88f0;
+        color: #ccc;
         padding: 0.5rem;
         display: flex;
         align-items: center;
 
         h3{
             margin-left: 1rem;
-            background-color: #5d88f0;
+            background-color: #ccc;
             border-radius: 5px;
             color: black;
             padding: 1rem;
         }
 
         &:hover{
-            color: yellow;
+            color: #5d88f0;
             transform: scale(1.05);
 
             h3{
-                background-color: yellow;
+                background-color: #5d88f0;
             }
         }
     }

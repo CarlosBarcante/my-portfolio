@@ -47,6 +47,7 @@ const StyledCard = styled.div`
             background-color: #ccc;
             padding: .5rem;
             h4{
+                color: black;
                 font-size: 1.2rem;
             }
             p{

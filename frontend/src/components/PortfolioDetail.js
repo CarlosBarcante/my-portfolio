@@ -45,7 +45,7 @@ function PortfolioDetail() {
 
 const Shadow = styled.div`
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     background-color: rgba(0,0,0,0.8);
     position: absolute;
     top: 0;
@@ -57,7 +57,7 @@ const Detail = styled.div`
     width: 80vw;
     min-height: 80vh;
     position: absolute;
-    top: 12%;
+    top: 5%;
     left: 10%;
     z-index: 10;
     border: 1px solid yellow;

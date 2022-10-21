@@ -1,69 +1,49 @@
 import React from "react";
-import styled from "styled-components";
-import { Container } from "../styles";
-
-// Navegação
 import { Link } from 'react-router-dom';
 
+import styled from "styled-components";
 
 function Nav() {
     return (
         <StyledNav>
-            <Container id="container">
-                <Link to='/'><h1>Carlos Barçante</h1></Link>
-                <ul>
-                    <Link to='/'><li>Sobre Mim</li></Link>
-                    <Link to='/portfolio'><li>Portfólio</li></Link>
-                    <Link to='/contact'><li>Contato</li></Link>
-                </ul>
-            </Container>
+            <ul>
+                <Link to='/'><li>Home</li></Link>
+                <Link to='/portfolio'><li>Portfólio</li></Link>
+                <Link to='/contact'><li>Contato</li></Link>
+            </ul>
         </StyledNav>
     )
 }
 
 const StyledNav = styled.nav`
-    position: relative;
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #282828;
     position: sticky;
     top: 0;
     z-index: 3;
     
-    #container{
-        padding: .5rem 2rem;
+    
+    ul{
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        
+        justify-content: center;
+        gap: 5rem;
+
         a{
             color: #ccc;
-
         }
-        h1{
-            font-size: 2rem;
-            font-weight: 600;
-        }
-        ul{
-            display: flex;
-            a{
-                margin-right: 5rem;
-            }
-            li{
-                font-size: 1.3rem;
-                font-weight: 300;
-                &:hover{
-                    color: #5d88f0;
-                }
-            }
-            @media (max-width: 600px) {
-                align-self: flex-start;
-                a{
-                    margin: 0.5rem 1rem;
-                }
-            }
+        li{
+            font-size: 1.3rem;
+            font-weight: 300;
         }
 
-        @media (max-width: 1000px) {
+        @media (max-width: 600px) {
             flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: .5rem;
         }
     }
 `;

@@ -36,8 +36,8 @@ function AboutSection() {
 
                     <motion.p variants={fadeInAnimation}>
                         Desenvolvedor Full Stack, tendo iniciado o aprendizado em desenvolvimento em 2021.
-                        Estou sempre disposto a aprender novas tecnologias.
-                        Algumas das tecnologias que tenho interesse em trabalhar são:
+                        Estou disposto a aprender novas tecnologias que sejam interessantes para a empresa.
+                        Algumas das tecnologias que já possuo conhecimento e tenho interesse em trabalhar são:
                     </motion.p>
                 </div>
                 <motion.div id="cards" variants={fadeInAnimation}>
@@ -64,41 +64,51 @@ function AboutSection() {
 }
 
 const AboutContainer = styled(Container)`
-    min-height: 99vh;
+    min-height: 92vh;
     z-index: 2;
     display: flex;
-    align-items: center;
     justify-content: center;
 
     #description{
-        width:100%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3rem;
 
         #introduction{
-            flex: 1;
+            text-align: center;
+            
+            h2{
+                color: yellow;
+            }
+            h3{
+                color: #5d88f0;
+            }
             p{
                 padding: 0.5rem 0;
             }
         }
 
         #cards{
-            flex:1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5rem;
 
             .card{
                 color: #CCC;
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-content: center;
+                gap: 1rem;
                 margin-bottom: 2rem;
 
                 h4{
                     min-width: 20%;
-                    margin-left: 1rem;
                     color: #CCC;
-                    text-align: start;
+                    text-align: center;
                     border-radius: 7px;
                 }
             }
