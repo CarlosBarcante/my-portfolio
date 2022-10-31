@@ -1,4 +1,5 @@
 import React from "react";
+
 import GlobalStyle from './components/GlobalStyle';
 
 // Components e rotas
@@ -6,10 +7,11 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Admin from "./pages/Admin";
 import PortfolioDetail from "./components/PortfolioDetail";
 
 // Navigation
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 // Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -17,17 +19,20 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+  const location = useLocation();
   library.add(fab, faDatabase);
+
   return (
     <div className="App">
       <GlobalStyle />
-      <Nav />
+      {location.pathname !== '/admin' && <Nav />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path={"/portfolio"} element={<Portfolio />}>
           <Route path={"/portfolio/:slug"} element={<PortfolioDetail />} />
         </Route>
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );
