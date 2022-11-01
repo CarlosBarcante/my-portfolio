@@ -56,7 +56,7 @@ const Shadow = styled.div`
 const Detail = styled.div`
     width: 70vw;
     position: absolute;
-    top: 3.33%;
+    top: 5%;
     left: 15%;
     z-index: 10;
     border: 1px solid yellow;

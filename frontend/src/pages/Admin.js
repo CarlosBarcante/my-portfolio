@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../styles";
 
+import PortfolioTable from "../components/admin/PortfolioTable";
+
 function openTab(event, tabName) {
     let tabcontent = document.querySelectorAll('.tab-content');
     tabcontent.forEach(tab => {
@@ -34,7 +36,7 @@ function Admin() {
             </div>
 
             <div id="portfolio" className="tab-content">
-                <h3>Portfolio</h3>
+                <PortfolioTable />
             </div>
 
             <div id="technologies" className="tab-content">
