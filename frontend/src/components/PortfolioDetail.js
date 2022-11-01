@@ -44,8 +44,8 @@ function PortfolioDetail() {
 }
 
 const Shadow = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 150vh;
     background-color: rgba(0,0,0,0.8);
     position: absolute;
     top: 0;
@@ -54,11 +54,10 @@ const Shadow = styled.div`
 `;
 
 const Detail = styled.div`
-    width: 80vw;
-    min-height: 80vh;
+    width: 70vw;
     position: absolute;
-    top: 5%;
-    left: 10%;
+    top: 3.33%;
+    left: 15%;
     z-index: 10;
     border: 1px solid yellow;
     box-shadow: 0px 5px 14px yellow;
@@ -116,13 +115,12 @@ const Detail = styled.div`
     }
 
     img{
-        width: 100%;
-        object-fit: fill;
-        height: 55vh;
-
-        @media (max-width: 800px) {
-            height: 30vh;
-        }
+        width: 60%;
+        margin: 1rem 0;
+        align-self: center;
+        border: 1px solid #5d88f0;
+        border-radius: 1rem;
+        box-shadow: 0px 5px 14px #5d88f0;
     }
 `;
 

@@ -19,8 +19,7 @@ function Card({ project }) {
 }
 
 const StyledCard = styled.div`
-    min-height: 40vh;
-    max-height: 75vh;
+    height: 22rem;
     border: 1px solid #5d88f0;
     box-shadow: 0px 5px 14px #5d88f0;
     border-radius: 1rem;
