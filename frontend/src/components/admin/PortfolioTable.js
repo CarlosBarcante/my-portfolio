@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 import { useApi } from "../../hooks/useApi";
 
+import PortfolioModal from "./PortfolioModal";
+
 function PortfolioTable() {
     const [showModal, setShowModal] = useState(false);
     const { data } = useApi('/portfolio');
@@ -32,13 +34,16 @@ function PortfolioTable() {
                                 <td>{moment(project.title).format('D-M-YYYY')}</td>
                                 <td>
                                     <button>Editar</button>
-                                    <button>Excluir</button>
+                                    <button onClick={() => setShowModal(true)}>Excluir</button>
                                 </td>
                             </tr>
                         );
                     })}
                 </tbody>
             </table>
+
+            {showModal && <PortfolioModal />}
+
         </PortfolioTableContainer>
     )
 }
