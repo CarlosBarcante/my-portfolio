@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-function PortfolioModal({ setShowModal, action }) {
+function PortfolioModal({ setShowModal, action, children }) {
     return (
         <Shadow>
             <PortfolioModalContainer>
@@ -11,7 +11,7 @@ function PortfolioModal({ setShowModal, action }) {
                     <h1>{action.header}</h1>
                 </div>
                 <div id="modal-body">
-                    Tem certza que deseja excluir?
+                    {children}
                 </div>
                 <div id="modal-footer">
                     <button onClick={() => setShowModal(false)}>Cancelar</button>
@@ -52,12 +52,16 @@ const PortfolioModalContainer = styled.div`
 
     #modal-body{
         margin: 1rem 0;
+        font-size: 1.5rem;
     }
 
     #modal-footer{
-
         button{
             margin-right: 1rem;
+            background-color: #5d88f0;
+            color: white;
+            border: none;
+            border-radius: .8rem;
 
             :hover{
                 background-color: black;

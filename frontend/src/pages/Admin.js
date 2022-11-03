@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Container } from "../styles";
 
 import PortfolioTable from "../components/admin/PortfolioTable";
-import PortfolioForm from "../components/admin/PortfolioForm";
 
 function openTab(event, tabName) {
     let tabcontent = document.querySelectorAll('.tab-content');
@@ -41,7 +40,7 @@ function Admin() {
             </div>
 
             <div id="technologies" className="tab-content">
-                <PortfolioForm />
+                <h3>Tecnologias</h3>
             </div>
         </AdminContainer >
     )

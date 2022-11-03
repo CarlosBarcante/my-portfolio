@@ -6,20 +6,24 @@ import styled from "styled-components";
 import { useApi } from "../../hooks/useApi";
 
 import PortfolioModal from "./PortfolioModal";
+import PortfolioForm from "./PortfolioForm";
 
 function PortfolioTable() {
     const actions = {
         del: {
             header: 'Excluir',
-            label: 'Confirmar'
+            label: 'Confirmar',
+            body: 'Tem certeza que deseja deletar?'
         },
         edit: {
             header: 'Editar',
-            label: 'Salvar'
+            label: 'Salvar',
+            body: <PortfolioForm />
         },
         add: {
             header: 'Criar novo portfólio',
-            label: 'Salvar'
+            label: 'Salvar',
+            body: <PortfolioForm />
         }
     }
     const [showModal, setShowModal] = useState(false);
@@ -62,7 +66,12 @@ function PortfolioTable() {
                 </tbody>
             </table>
 
-            {showModal && <PortfolioModal setShowModal={setShowModal} action={action} />}
+            {showModal &&
+                <PortfolioModal setShowModal={setShowModal} action={action}>
+                    {action.body}
+                </PortfolioModal>
+
+            }
 
         </PortfolioTableContainer>
     )

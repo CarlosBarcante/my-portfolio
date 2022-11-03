@@ -29,6 +29,9 @@ function PortfolioForm() {
 }
 
 const Form = styled.form`
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+
     div{
         font-size: 1.1rem;
         display: flex;
@@ -40,10 +43,6 @@ const Form = styled.form`
             padding: .3rem;
             border-radius: .3rem;
             border: 1px solid black;
-
-            &:focus{
-                background-color: #ccc;
-            }
         }
 
         textarea{
