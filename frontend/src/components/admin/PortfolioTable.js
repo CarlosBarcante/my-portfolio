@@ -37,6 +37,8 @@ function PortfolioTable() {
 
     return (
         <PortfolioTableContainer>
+            <button id='add-button' onClick={() => handleShow(null, actions.add)}>Adicionar novo portfólio</button>
+
             <table>
                 <thead>
                     <tr>
@@ -78,13 +80,21 @@ function PortfolioTable() {
 }
 
 const PortfolioTableContainer = styled.div`
+    #add-button{
+        width: 100%;
+        font-size: 1rem;
+        background-color: #5d88f0;
+        color: yellow;
+        border: none;
+    }
+
     table{
         width: 100%;
         border-collapse: collapse;
 
         img{
             width: 20rem;
-            border: 3px solid white;
+            border: 5px solid white;
             border-radius: .7rem;
         }
 
