@@ -2,20 +2,20 @@ import React from "react";
 
 import styled from "styled-components";
 
-function PortfolioModal() {
+function PortfolioModal({ setShowModal, action }) {
     return (
         <Shadow>
             <PortfolioModalContainer>
                 <div id="modal-header">
-                    <button id="close"></button>
-                    <h1>Confirmar</h1>
+                    <button id="close" onClick={() => setShowModal(false)}></button>
+                    <h1>{action.header}</h1>
                 </div>
                 <div id="modal-body">
                     Tem certza que deseja excluir?
                 </div>
                 <div id="modal-footer">
-                    <button>Cancelar</button>
-                    <button>Confirmar</button>
+                    <button onClick={() => setShowModal(false)}>Cancelar</button>
+                    <button onClick={() => setShowModal(false)}>{action.label}</button>
                 </div>
             </PortfolioModalContainer>
         </Shadow>
@@ -43,9 +43,11 @@ const PortfolioModalContainer = styled.div`
     border-radius: 1rem;
     box-shadow: 0px 5px 14px yellow;
 
-    h1{
-        color: black;
-        text-align: left;
+    #modal-header{
+        h1{
+            color: black;
+            text-align: left;
+        }
     }
 
     #modal-body{

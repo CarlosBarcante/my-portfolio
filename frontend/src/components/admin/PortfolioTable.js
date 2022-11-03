@@ -8,8 +8,28 @@ import { useApi } from "../../hooks/useApi";
 import PortfolioModal from "./PortfolioModal";
 
 function PortfolioTable() {
+    const actions = {
+        del: {
+            header: 'Excluir',
+            label: 'Confirmar'
+        },
+        edit: {
+            header: 'Editar',
+            label: 'Salvar'
+        },
+        add: {
+            header: 'Criar novo portfólio',
+            label: 'Salvar'
+        }
+    }
     const [showModal, setShowModal] = useState(false);
+    const [action, setAction] = useState({});
     const { data } = useApi('/portfolio');
+
+    function handleShow(slug, action) {
+        setAction(action);
+        setShowModal(true);
+    }
 
     return (
         <PortfolioTableContainer>
@@ -26,15 +46,15 @@ function PortfolioTable() {
                 <tbody>
                     {data?.data?.map(project => {
                         return (
-                            <tr>
+                            <tr key={project.slug}>
                                 <td>
                                     <img src={project.image} alt={project.title} />
                                 </td>
                                 <td>{project.title}</td>
-                                <td>{moment(project.title).format('D-M-YYYY')}</td>
+                                <td>{moment(project.createdAt).format('D-M-YYYY')}</td>
                                 <td>
-                                    <button>Editar</button>
-                                    <button onClick={() => setShowModal(true)}>Excluir</button>
+                                    <button onClick={() => { handleShow(project.slug, actions.edit) }}>Editar</button>
+                                    <button onClick={() => { handleShow(project.slug, actions.del) }}>Excluir</button>
                                 </td>
                             </tr>
                         );
@@ -42,7 +62,7 @@ function PortfolioTable() {
                 </tbody>
             </table>
 
-            {showModal && <PortfolioModal />}
+            {showModal && <PortfolioModal setShowModal={setShowModal} action={action} />}
 
         </PortfolioTableContainer>
     )
