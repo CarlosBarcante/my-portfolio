@@ -34,7 +34,7 @@ const Shadow = styled.div`
 
 const PortfolioModalContainer = styled.div`
     width: 70%;
-    top: 5%;
+    top: 10vh;
     left: 15%;
     position: absolute;
     background-color: #ccc;

@@ -9,29 +9,40 @@ import PortfolioModal from "./PortfolioModal";
 import PortfolioForm from "./PortfolioForm";
 
 function PortfolioTable() {
+    const [title, setTitle] = useState('');
+    const [shortDescription, setShortDescription] = useState('');
+    const [longDescription, setLongDescription] = useState('');
+    const [image, setImage] = useState('');
+    const [slug, setSlug] = useState('');
     const actions = {
         del: {
             header: 'Excluir',
             label: 'Confirmar',
+            showBody: true,
             body: 'Tem certeza que deseja deletar?'
         },
         edit: {
             header: 'Editar',
             label: 'Salvar',
-            body: <PortfolioForm />
+            showBody: false
         },
         add: {
             header: 'Criar novo portfólio',
             label: 'Salvar',
-            body: <PortfolioForm />
+            showBody: false
         }
     }
     const [showModal, setShowModal] = useState(false);
     const [action, setAction] = useState({});
     const { data } = useApi('/portfolio');
 
-    function handleShow(slug, action) {
+    function handleShow(portfolio, action) {
         setAction(action);
+        setTitle(portfolio.title);
+        setShortDescription(portfolio.description);
+        setLongDescription(portfolio.longDescription);
+        setImage(portfolio.image);
+        setSlug(portfolio.slug);
         setShowModal(true);
     }
 
@@ -59,8 +70,8 @@ function PortfolioTable() {
                                 <td>{project.title}</td>
                                 <td>{moment(project.createdAt).format('D-M-YYYY')}</td>
                                 <td>
-                                    <button onClick={() => { handleShow(project.slug, actions.edit) }}>Editar</button>
-                                    <button onClick={() => { handleShow(project.slug, actions.del) }}>Excluir</button>
+                                    <button onClick={() => { handleShow(project, actions.edit) }}>Editar</button>
+                                    <button onClick={() => { handleShow(project, actions.del) }}>Excluir</button>
                                 </td>
                             </tr>
                         );
@@ -70,7 +81,20 @@ function PortfolioTable() {
 
             {showModal &&
                 <PortfolioModal setShowModal={setShowModal} action={action}>
-                    {action.body}
+                    {action.showBody && action.body}
+
+                    {!action.showBody && <PortfolioForm
+                        title={title}
+                        setTitle={setTitle}
+                        shortDescription={shortDescription}
+                        setShortDescription={setShortDescription}
+                        longDescription={longDescription}
+                        setLongDescription={setLongDescription}
+                        image={image}
+                        setImage={setImage}
+                        slug={slug}
+                        setSlug={setSlug}
+                    />}
                 </PortfolioModal>
 
             }

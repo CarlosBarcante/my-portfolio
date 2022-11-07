@@ -2,27 +2,40 @@ import React from "react";
 
 import styled from "styled-components";
 
-function PortfolioForm() {
+function PortfolioForm(props) {
     return (
         <Form>
             <div>
                 <label>Título</label>
-                <input type='text' />
+                <input
+                    type='text'
+                    value={props.title}
+                    onChange={(e) => props.setTitle(e.target.value)}
+                />
             </div>
             <div>
                 <label>Descrição Curta</label>
-                <input type='text' />
+                <input
+                    type='text'
+                    value={props.shortDescription}
+                    onChange={(e) => props.setShortDescription(e.target.value)}
+                />
             </div>
             <div>
                 <label>Descrição Longa</label>
                 <textarea
                     rows="3"
-                    placeholder=""
+                    value={props.longDescription}
+                    onChange={(e) => props.setLongDescription(e.target.value)}
                 />
             </div>
             <div>
                 <label>Imagem</label>
-                <input type='text' />
+                <input
+                    type='text'
+                    value={props.image}
+                    onChange={(e) => props.setImage(e.target.value)}
+                />
             </div>
         </Form>
     )
