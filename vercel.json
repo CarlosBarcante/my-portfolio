@@ -11,6 +11,10 @@
                 },
                 "command": "npm run build && npm run start"
             }
+        },
+        {
+            "src": "./frontend/build",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
