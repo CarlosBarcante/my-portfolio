@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from 'moment';
 
 import styled from "styled-components";
@@ -48,6 +48,17 @@ function PortfolioTable() {
         }
         setShowModal(true);
     }
+
+    useEffect(() => {
+        console.log('use effect')
+        if (showModal == false) {
+            setTitle('');
+            setShortDescription('');
+            setLongDescription('');
+            setImage('');
+            setSlug('');
+        }
+    }, [showModal]);
 
     return (
         <PortfolioTableContainer>
