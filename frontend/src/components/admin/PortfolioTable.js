@@ -38,11 +38,14 @@ function PortfolioTable() {
 
     function handleShow(portfolio, action) {
         setAction(action);
-        setTitle(portfolio.title);
-        setShortDescription(portfolio.description);
-        setLongDescription(portfolio.longDescription);
-        setImage(portfolio.image);
-        setSlug(portfolio.slug);
+
+        if (portfolio) {
+            setTitle(portfolio.title);
+            setShortDescription(portfolio.description);
+            setLongDescription(portfolio.longDescription);
+            setImage(portfolio.image);
+            setSlug(portfolio.slug);
+        }
         setShowModal(true);
     }
 
