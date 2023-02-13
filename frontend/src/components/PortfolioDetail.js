@@ -1,8 +1,11 @@
 import React from "react";
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
 import { useApi } from "../hooks/useApi";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 function PortfolioDetail() {
     const navigate = useNavigate();

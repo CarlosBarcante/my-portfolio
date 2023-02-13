@@ -1,6 +1,7 @@
 import React from "react";
-
 import styled from "styled-components";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function PortfolioForm(props) {
     return (
@@ -37,6 +38,36 @@ function PortfolioForm(props) {
                     onChange={(e) => props.setImage(e.target.value)}
                 />
             </div>
+            <div id='tech-cards'>
+                <div className='card'>
+                    <div className="icon">
+                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
+                        GitHub
+                    </div>
+                    <button>remover</button>
+                </div>
+                <div className='card'>
+                    <div className="icon">
+                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
+                        GitHub
+                    </div>
+                    <button>remover</button>
+                </div>
+                <div className='card'>
+                    <div className="icon">
+                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
+                        GitHub
+                    </div>
+                    <button>remover</button>
+                </div>
+                <div className='card'>
+                    <div className="icon">
+                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
+                        GitHub
+                    </div>
+                    <button>remover</button>
+                </div>
+            </div>
         </Form>
     )
 }
@@ -60,6 +91,27 @@ const Form = styled.form`
 
         textarea{
             resize: none;
+        }
+    }
+
+    #tech-cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card{
+            width: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button{
+                padding: 0.1rem;
+                font-size: 1rem;
+                color: #ccc;
+                background-color: black;
+            }
         }
     }
 `;
