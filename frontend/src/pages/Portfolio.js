@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { pageAnimation } from '../animations/pageAnimation';
 
 import styled from "styled-components";
-import { Container } from "../styles";
 
 import ScrollTop from "../components/ScrollTop";
 import CardList from "../components/PortfolioCardList";
@@ -15,7 +14,7 @@ function Portfolio() {
     const slug = location.pathname.split('/')[2];
 
     return (
-        <PortfolioContainer
+        <main
             initial='hidden'
             animate='show'
             exit='exit'
@@ -24,12 +23,8 @@ function Portfolio() {
             {slug && <PortfolioDetail />}
             <CardList />
             <ScrollTop />
-        </PortfolioContainer>
+        </main>
     )
 }
-
-const PortfolioContainer = styled(Container)`
-    min-height: 90vh;
-`;
 
 export default Portfolio;

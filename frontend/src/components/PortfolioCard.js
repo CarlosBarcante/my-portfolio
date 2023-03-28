@@ -19,9 +19,10 @@ function Card({ project }) {
 }
 
 const StyledCard = styled.div`
-    height: 22rem;
-    border: 1px solid #5d88f0;
-    box-shadow: 0px 5px 14px #5d88f0;
+    /* height: 19rem; */
+    height: 100%;
+    border: 1px solid #6699ff;
+    box-shadow: 0px 5px 14px #6699ff;
     border-radius: 1rem;
     cursor: pointer;
     text-align: center;
@@ -33,25 +34,23 @@ const StyledCard = styled.div`
         flex-direction: column;
 
         img{
-            height: 65%;
             width: 100%;
         }
 
         .info{
-            height: 35%;
-            display: flex;
+            /* display: flex;
             flex-direction: column;
-            justify-content: start;
+            justify-content: start; */
             text-align: left;
-            background-color: #ccc;
+            background-color: #cccccc33;
             padding: .5rem;
             h4{
-                color: black;
+                color: #00ff00;
                 font-size: 1.2rem;
             }
             p{
                 font-size: 1.2rem;
-                color: black;
+                color: #6699ff;
                 padding: 0 0;
                 margin-top: .5rem;
                 overflow: hidden;
@@ -61,8 +60,8 @@ const StyledCard = styled.div`
 
     &:hover{
         transform: scale(1.01);
-        border: 1px solid yellow;
-        box-shadow: 0px 5px 14px yellow;
+        border: 1px solid #00ff00;
+        box-shadow: 0px 5px 14px #00ff00;
     }
 `;
 

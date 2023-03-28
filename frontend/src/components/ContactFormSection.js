@@ -65,22 +65,24 @@ function ContactFormSection() {
 }
 
 const Form = styled.form`
-    flex: 1;
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
+    
     div{
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 5px;
         margin-bottom: 1rem;
 
         label{
-            color: #ccc;
-            font-size: 1.6rem;
+            color: #6699ff;
+            font-size: 1rem;
         }
 
         input, textarea{
-            width: 60%;
-            padding: 0.9rem;
+            width: 100%;
+            padding: 0.5rem;
             border-radius: 7px;
             &:focus{
                 background-color: #ccc;
@@ -93,20 +95,15 @@ const Form = styled.form`
     }
 
     button{
-        width: 40%;
-        align-self: flex-end;
+        width: 100%;
         text-align: center;
-        border-color: #ccc;
-        color: #ccc;
+        border-color: #6699ff;
+        color: #6699ff;
 
         &:hover{
-            background-color: #ccc;
-            color: black;
+            background-color: #6699ff;
+            color: #000;
         }
-    }
-
-    @media (max-width: 800px){
-        margin-bottom: 20px;
     }
 `;
 
