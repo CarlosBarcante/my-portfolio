@@ -3,11 +3,11 @@ import React from "react";
 import GlobalStyle from './components/GlobalStyle';
 import styled from 'styled-components';
 
-// Components e rotas
+// Components and pages
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
+import Contact from './components/Contact';
 import Admin from "./pages/Admin";
 import PortfolioDetail from "./components/PortfolioDetail";
 
@@ -44,6 +44,7 @@ function App() {
 
 const AppContainer = styled(Container)`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-top: 1rem;
 

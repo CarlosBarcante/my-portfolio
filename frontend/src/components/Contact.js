@@ -2,8 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
-import SocialNetworkSection from "../components/SocialNetworkSection";
-import ContactFormSection from "../components/ContactFormSection";
+import SocialNetworkSection from "./SocialNetworkSection";
+import ContactFormSection from "./ContactFormSection";
 
 
 function Contact() {

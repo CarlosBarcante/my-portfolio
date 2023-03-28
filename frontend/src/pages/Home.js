@@ -9,7 +9,6 @@ import { useScroll } from "../hooks/useScroll";
 
 import ScrollTop from '../components/ScrollTop';
 
-import { Description } from '../styles';
 import styled from "styled-components";
 
 // import icones
@@ -33,15 +32,12 @@ function Home() {
                 initial='hidden'
                 ref={ref}
             >
-                <Description id="description">
+                <div id="description">
                     <div id="introduction">
                         <motion.div variants={titleAnimation}>
                             <h2>Carlos Barçante</h2>
                             <h3>Desenvolvedor Full Stack</h3>
                         </motion.div>
-
-                        {/* <motion.h2 variants={titleAnimation}>Carlos Barçante</motion.h2>
-                    <motion.h3 variants={titleAnimation}>Desenvolvedor Full Stack</motion.h3> */}
 
                         <motion.p variants={fadeInAnimation}>
                             Desenvolvedor Full Stack, tendo iniciado o aprendizado em desenvolvimento em 2021.
@@ -67,9 +63,8 @@ function Home() {
                             <h4>MongoDB</h4>
                         </div>
                     </motion.div>
-                </Description>
+                </div>
             </AboutContainer>
-
 
             <ScrollTop />
         </motion.main>
@@ -79,26 +74,26 @@ function Home() {
 const AboutContainer = styled.div`
     z-index: 2;
     display: flex;
-    justify-content: flex-start;
+    padding: .5rem;
 
     #description{
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 3rem;
+        gap: 2rem;
 
         #introduction{
-            text-align: center;
-            
             h2{
                 color: #00ff00;
             }
             h3{
                 color: #6699ff;
             }
+            h2, h3{
+                text-align: center;
+            }
             p{
-                padding: 0.5rem 0;
+                margin-top: 10px;
+                padding:0;
             }
         }
 
@@ -110,7 +105,7 @@ const AboutContainer = styled.div`
             gap: 5rem;
 
             .card{
-                color: #CCC;
+                color: #ccc;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
