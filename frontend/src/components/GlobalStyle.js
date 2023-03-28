@@ -39,11 +39,10 @@ const GlobalStyle = createGlobalStyle`
 
     span{
         font-weight: lighter;
-        color: #5d88f0;
+        color: #6699ff;
     }
 
     p{
-        padding: 3rem 0;
         color: #ccc;
         font-size: 1.4rem;
         line-height: 150%;
