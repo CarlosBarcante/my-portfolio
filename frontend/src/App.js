@@ -46,7 +46,7 @@ const AppContainer = styled(Container)`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   main{
     flex:3;

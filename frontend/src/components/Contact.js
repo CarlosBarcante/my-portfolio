@@ -20,6 +20,7 @@ function Contact() {
 
 const ContactContainer = styled.div`
     flex: 1;
+    height: 100%;
     padding: .5rem;
     margin-bottom: 1rem;
     border: 2px solid #CCC;
