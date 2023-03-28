@@ -1,9 +1,6 @@
 import React from "react";
 
-import { pageAnimation } from '../animations/pageAnimation';
-
 import styled from "styled-components";
-import { Container } from '../styles'
 
 import SocialNetworkSection from "../components/SocialNetworkSection";
 import ContactFormSection from "../components/ContactFormSection";
@@ -11,13 +8,8 @@ import ContactFormSection from "../components/ContactFormSection";
 
 function Contact() {
     return (
-        <ContactContainer
-            initial='hidden'
-            animate='show'
-            exit='exit'
-            variants={pageAnimation}
-        >
-            <h2>Entre em contato</h2>
+        <ContactContainer>
+            <h2>Contato</h2>
             <div id="contact-area">
                 <ContactFormSection />
                 <SocialNetworkSection />
@@ -26,20 +18,23 @@ function Contact() {
     )
 }
 
-const ContactContainer = styled(Container)`
+const ContactContainer = styled.div`
+    flex: 1;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #CCC;
+    border-radius: 1rem;
+    background-color: #cccccc33;
+
     h2{
-        color: yellow;
-        margin-bottom: 4rem;
-        text-align: center;
+        color: #00ff00;
+        font-size: 2rem;
+        margin-bottom: .3rem;
     }
 
     #contact-area{
         display: flex;
-        align-items: center;
-
-        @media (max-width: 800px) {
-            flex-direction: column;
-        }
+        flex-direction: column;        
     }
 `;
 

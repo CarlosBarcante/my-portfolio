@@ -1,6 +1,7 @@
 import React from "react";
 
 import GlobalStyle from './components/GlobalStyle';
+import styled from 'styled-components';
 
 // Components e rotas
 import Nav from './components/Nav';
@@ -17,6 +18,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { Container } from './styles';
 
 function App() {
   const location = useLocation();
@@ -26,16 +28,28 @@ function App() {
     <div className="App">
       <GlobalStyle />
       {location.pathname !== '/admin' && <Nav />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path={"/portfolio"} element={<Portfolio />}>
-          <Route path={"/portfolio/:slug"} element={<PortfolioDetail />} />
-        </Route>
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+      <AppContainer>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path={"/portfolio"} element={<Portfolio />}>
+            <Route path={"/portfolio/:slug"} element={<PortfolioDetail />} />
+          </Route>
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+        {location.pathname !== '/admin' && <Contact />}
+      </AppContainer>
     </div>
   );
 }
+
+const AppContainer = styled(Container)`
+  display: flex;
+  gap: 20px;
+  margin-top: 1rem;
+
+  main{
+    flex:3;
+  }
+`;
 
 export default App;

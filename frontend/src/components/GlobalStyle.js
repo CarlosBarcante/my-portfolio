@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-color: #1b1b1b;
+        background-image: linear-gradient(to right, #000, #000033);
         overflow-x: hidden;
         text-decoration: none;
     }
@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         padding: 1rem 2rem;
         background: transparent;
-        border-radius: 4px;
+        border-radius: 7px;
         transition: all 0.5s ease;
     }
 

@@ -2,30 +2,32 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 import styled from "styled-components";
+import { Container } from '../styles';
 
 function Nav() {
     return (
         <StyledNav>
-            <ul>
-                <Link to='/'><li>Home</li></Link>
-                <Link to='/portfolio'><li>Portfólio</li></Link>
-                <Link to='/contact'><li>Contato</li></Link>
-            </ul>
+            <NavContent>
+                <h1>Carlos Barçante</h1>
+                <ul>
+                    <Link to='/'><li>Home</li></Link>
+                    <Link to='/portfolio'><li>Portfólio</li></Link>
+                </ul>
+            </NavContent>
         </StyledNav>
     )
 }
 
-const StyledNav = styled.nav`
-    min-height: 8vh;
+const NavContent = styled(Container)`
+    height: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    background-color: #282828;
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    
-    
+
+    h1{
+        color: #ccc;
+    }
+
     ul{
         display: flex;
         align-items: center;
@@ -36,7 +38,7 @@ const StyledNav = styled.nav`
             color: #ccc;
         }
         li{
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 300;
         }
 
@@ -46,6 +48,15 @@ const StyledNav = styled.nav`
             margin-bottom: .5rem;
         }
     }
+`;
+
+const StyledNav = styled.nav`
+    height: 3rem;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    
 `;
 
 
