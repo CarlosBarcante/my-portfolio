@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom";
 
 import { pageAnimation } from '../animations/pageAnimation';
 
-import styled from "styled-components";
-
 import ScrollTop from "../components/ScrollTop";
 import CardList from "../components/PortfolioCardList";
 import PortfolioDetail from "../components/PortfolioDetail";
