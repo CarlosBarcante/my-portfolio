@@ -47,6 +47,7 @@ function Admin() {
 }
 
 const AdminContainer = styled(Container)`
+    width:100%;
     display: flex;
     flex-direction: column;
 
