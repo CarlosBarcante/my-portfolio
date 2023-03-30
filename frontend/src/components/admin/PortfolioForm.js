@@ -4,6 +4,12 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function PortfolioForm(props) {
+    function handleRemoveItem(event, id) {
+        event.preventDefault();
+        const newTechs = props.techs.filter(tech => tech._id !== id);
+        props.setTechs(newTechs);
+    }
+
     return (
         <Form>
             <div>
@@ -38,35 +44,37 @@ function PortfolioForm(props) {
                     onChange={(e) => props.setImage(e.target.value)}
                 />
             </div>
-            <div id='tech-cards'>
-                <div className='card'>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
-                        GitHub
-                    </div>
-                    <button>remover</button>
+
+            {props.techs &&
+                <div id='tech-cards'>
+                    {props.techs.map((tech) => {
+                        return (
+                            <div className='card'>
+                                <div className="icon">
+                                    <FontAwesomeIcon icon={[tech.iconType, tech.icon]} size='3x' />
+                                    {tech.label}
+                                </div>
+                                <button onClick={(e) => handleRemoveItem(e, tech._id)}>remover</button>
+                            </div>
+                        )
+                    })}
                 </div>
-                <div className='card'>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
-                        GitHub
-                    </div>
-                    <button>remover</button>
-                </div>
-                <div className='card'>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
-                        GitHub
-                    </div>
-                    <button>remover</button>
-                </div>
-                <div className='card'>
-                    <div className="icon">
-                        <FontAwesomeIcon icon={['fab', 'github']} size='3x' />
-                        GitHub
-                    </div>
-                    <button>remover</button>
-                </div>
+            }
+
+            <div id='add-techs'>
+                <input
+                    type='text'
+                    placeholder='Tipo: fab ou fas'
+                />
+                <input
+                    type='text'
+                    placeholder='Ícone: github, database'
+                />
+                <input
+                    type='text'
+                    placeholder='Label: GitHub, MongoDB'
+                />
+                <button>Add</button>
             </div>
         </Form>
     )
@@ -110,8 +118,20 @@ const Form = styled.form`
                 padding: 0.1rem;
                 font-size: 1rem;
                 color: #ccc;
-                background-color: black;
+                background-color: #000;
             }
+        }
+    }
+
+    #add-techs{
+        display: flex;
+        flex-direction: row;
+
+        button{
+                padding: 0.5rem;
+                font-size: 1rem;
+                color: #ccc;
+                background-color: #000;
         }
     }
 `;

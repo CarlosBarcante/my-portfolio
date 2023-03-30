@@ -53,14 +53,13 @@ const AdminContainer = styled(Container)`
 
     h1{
         text-align: center;
-        color: #ccc;
+        color: #00ff00;
         margin-bottom: 2rem;
     }
 
     .tab-nav {
         button {
             float: left;
-            background-color: #1b1b1b;
             color: #ccc;
             border: 1px solid #ccc;
             border-bottom: none;
@@ -69,7 +68,7 @@ const AdminContainer = styled(Container)`
 
             :hover {
                 background-color: #ccc;
-                color: black;
+                color: #000;
             }
         }
 

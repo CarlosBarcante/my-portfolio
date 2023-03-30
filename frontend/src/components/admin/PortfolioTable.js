@@ -14,6 +14,7 @@ function PortfolioTable() {
     const [longDescription, setLongDescription] = useState('');
     const [image, setImage] = useState('');
     const [slug, setSlug] = useState('');
+    const [techs, setTechs] = useState('');
     const actions = {
         del: {
             header: 'Excluir',
@@ -45,18 +46,19 @@ function PortfolioTable() {
             setLongDescription(portfolio.longDescription);
             setImage(portfolio.image);
             setSlug(portfolio.slug);
+            setTechs(portfolio.technologies);
         }
         setShowModal(true);
     }
 
     useEffect(() => {
-        console.log('use effect')
-        if (showModal == false) {
+        if (showModal === false) {
             setTitle('');
             setShortDescription('');
             setLongDescription('');
             setImage('');
             setSlug('');
+            setTechs('');
         }
     }, [showModal]);
 
@@ -108,6 +110,8 @@ function PortfolioTable() {
                         setImage={setImage}
                         slug={slug}
                         setSlug={setSlug}
+                        techs={techs}
+                        setTechs={setTechs}
                     />}
                 </PortfolioModal>
 
@@ -121,8 +125,8 @@ const PortfolioTableContainer = styled.div`
     #add-button{
         width: 100%;
         font-size: 1rem;
-        background-color: #5d88f0;
-        color: yellow;
+        background-color: #6699ff;
+        color: #00ff00;
         border: none;
     }
 
@@ -132,14 +136,14 @@ const PortfolioTableContainer = styled.div`
 
         img{
             width: 20rem;
-            border: 5px solid white;
+            border: 5px solid #fff;
             border-radius: .7rem;
         }
 
         th, td{
             padding: .5rem;
             text-align: start;
-            border: 1px solid #1b1b1b;
+            border: 1px solid #000;
         }
 
         th{
@@ -157,14 +161,14 @@ const PortfolioTableContainer = styled.div`
 
                 :hover{
                     background-color: #ccc;
-                    color: black;
+                    color: #000;
                 }
             }
         }
 
         tbody{
             tr{
-                :hover{
+                &:hover{
                     background-color: #b5b5b5;
                 }
             }
