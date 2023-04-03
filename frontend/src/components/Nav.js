@@ -43,9 +43,7 @@ const NavContent = styled(Container)`
         }
 
         @media (max-width: 600px) {
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: .5rem;
+            gap: 1rem;
         }
     }
 `;
