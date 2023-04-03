@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function PortfolioForm(props) {
+    const [type, setType] = useState();
+    const [icon, setIcon] = useState();
+    const [label, setLabel] = useState();
+
     function handleRemoveItem(event, id) {
         event.preventDefault();
+
         const newTechs = props.techs.filter(tech => tech._id !== id);
         props.setTechs(newTechs);
+    }
+
+    function handleAddItem(event) {
+        event.preventDefault();
+
+        if (!type || !icon || !label) {
+            alert('Não possúi informação suficiente para adicionar um card, verifique os campos.');
+            return;
+        }
+
+        const newId = Math.random().toString(36).substring(7);
+        const newTech = {
+            iconType: type,
+            icon,
+            label,
+            _id: newId
+        }
+
+        props.setTechs([...props.techs, newTech]);
+
+        setType('');
+        setIcon('');
+        setLabel('');
     }
 
     return (
@@ -49,7 +77,7 @@ function PortfolioForm(props) {
                 <div id='tech-cards'>
                     {props.techs.map((tech) => {
                         return (
-                            <div className='card'>
+                            <div key={tech._id} className='card'>
                                 <div className="icon">
                                     <FontAwesomeIcon icon={[tech.iconType, tech.icon]} size='3x' />
                                     {tech.label}
@@ -65,16 +93,22 @@ function PortfolioForm(props) {
                 <input
                     type='text'
                     placeholder='Tipo: fab ou fas'
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
                 />
                 <input
                     type='text'
                     placeholder='Ícone: github, database'
+                    value={icon}
+                    onChange={(e) => setIcon(e.target.value)}
                 />
                 <input
                     type='text'
                     placeholder='Label: GitHub, MongoDB'
+                    value={label}
+                    onChange={(e) => setLabel(e.target.value)}
                 />
-                <button>Add</button>
+                <button onClick={(e) => handleAddItem(e)}>Add</button>
             </div>
         </Form>
     )
@@ -126,6 +160,7 @@ const Form = styled.form`
     #add-techs{
         display: flex;
         flex-direction: row;
+        width: 100%;
 
         button{
                 padding: 0.5rem;
