@@ -4,9 +4,9 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function PortfolioForm(props) {
-    const [type, setType] = useState();
-    const [icon, setIcon] = useState();
-    const [label, setLabel] = useState();
+    const [type, setType] = useState('');
+    const [icon, setIcon] = useState('');
+    const [label, setLabel] = useState('');
 
     function handleRemoveItem(event, id) {
         event.preventDefault();
@@ -160,7 +160,7 @@ const Form = styled.form`
     #add-techs{
         display: flex;
         flex-direction: row;
-        width: 100%;
+        flex-wrap: wrap;
 
         button{
                 padding: 0.5rem;
