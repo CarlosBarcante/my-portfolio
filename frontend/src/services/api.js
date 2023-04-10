@@ -4,4 +4,26 @@ const api = axios.create({
     baseURL: '/api'
 })
 
+export function deleteItem(slug) {
+    axios
+        .delete(`/api/portfolio/${slug}`)
+        .then(res => {
+            console.log(`Deletado: ${slug}`);
+            console.log(res);
+            return res;
+        })
+        .catch(error => {
+            console.log(error);
+            return error;
+        })
+}
+
+export function editItem(slug) {
+    console.log(`Editado: ${slug}`);
+}
+
+export function addItem() {
+    console.log(`Adicionado`);
+}
+
 export default api;

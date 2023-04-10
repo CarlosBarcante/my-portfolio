@@ -2,20 +2,25 @@ import React from "react";
 
 import styled from "styled-components";
 
-function PortfolioModal({ setShowModal, action, children }) {
+function PortfolioModal({ setShowModal, action, slug, children }) {
+    function handleConfirm() {
+        action.callback(slug);
+        setShowModal(false);
+    }
+
     return (
         <Shadow>
             <PortfolioModalContainer>
                 <div id="modal-header">
                     <button id="close" onClick={() => setShowModal(false)}></button>
-                    <h1>{action.header}</h1>
+                    <h1>{action.header} {slug}</h1>
                 </div>
                 <div id="modal-body">
                     {children}
                 </div>
                 <div id="modal-footer">
                     <button onClick={() => setShowModal(false)}>Cancelar</button>
-                    <button onClick={() => setShowModal(false)}>{action.label}</button>
+                    <button onClick={handleConfirm}>{action.label}</button>
                 </div>
             </PortfolioModalContainer>
         </Shadow>

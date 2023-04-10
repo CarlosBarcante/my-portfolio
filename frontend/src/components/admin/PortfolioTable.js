@@ -4,6 +4,7 @@ import moment from 'moment';
 import styled from "styled-components";
 
 import { useApi } from "../../hooks/useApi";
+import { deleteItem, editItem, addItem } from '../../services/api';
 
 import PortfolioModal from "./PortfolioModal";
 import PortfolioForm from "./PortfolioForm";
@@ -15,26 +16,44 @@ function PortfolioTable() {
     const [image, setImage] = useState('');
     const [slug, setSlug] = useState('');
     const [techs, setTechs] = useState('');
+
+    function handleDelete(slug) {
+        deleteItem(slug);
+    }
+
+    function handleAdd() {
+        addItem();
+    }
+
+    function handleEdit(slug) {
+        editItem(slug);
+    }
+
     const actions = {
         del: {
             header: 'Excluir',
             label: 'Confirmar',
             showBody: true,
-            body: 'Tem certeza que deseja deletar?'
+            body: 'Tem certeza que deseja deletar?',
+            callback: handleDelete
         },
         edit: {
             header: 'Editar',
             label: 'Salvar',
-            showBody: false
+            showBody: false,
+            callback: handleEdit
         },
         add: {
             header: 'Criar novo portfólio',
             label: 'Salvar',
-            showBody: false
+            showBody: false,
+            callback: handleAdd
         }
     }
-    const [showModal, setShowModal] = useState(false);
     const [action, setAction] = useState({});
+
+    const [showModal, setShowModal] = useState(false);
+
     const { data } = useApi('/portfolio');
 
     function handleShow(portfolio, action) {
@@ -48,6 +67,7 @@ function PortfolioTable() {
             setSlug(portfolio.slug);
             setTechs(portfolio.technologies);
         }
+
         setShowModal(true);
     }
 
@@ -96,7 +116,7 @@ function PortfolioTable() {
             </table>
 
             {showModal &&
-                <PortfolioModal setShowModal={setShowModal} action={action}>
+                <PortfolioModal setShowModal={setShowModal} action={action} slug={slug}>
                     {action.showBody && action.body}
 
                     {!action.showBody && <PortfolioForm
@@ -125,9 +145,14 @@ const PortfolioTableContainer = styled.div`
     #add-button{
         width: 100%;
         font-size: 1rem;
-        background-color: #6699ff;
-        color: #00ff00;
-        border: none;
+        background-color: #000033;
+        color: #FFF;
+        border: 3px solid #FFF;
+        margin-bottom: .5rem;
+
+        &:hover{
+            background-color: #336699;
+        }
     }
 
     table{
