@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 function PortfolioModal({ setShowModal, action, slug, children }) {
     function handleConfirm() {
-        action.callback(slug);
+        action.callback(slug, children[1].props);
         setShowModal(false);
     }
 

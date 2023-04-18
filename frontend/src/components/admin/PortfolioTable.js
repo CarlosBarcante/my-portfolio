@@ -21,12 +21,13 @@ function PortfolioTable() {
         deleteItem(slug);
     }
 
-    function handleAdd() {
-        addItem();
+    function handleAdd(slug, data) {
+        // function to create a new portfolio item to add to database
+        addPortfolioItem(data);
     }
 
-    function handleEdit(slug) {
-        editItem(slug);
+    function handleEdit(slug, data) {
+        editPortfolioItem(slug, data);
     }
 
     const actions = {
@@ -69,6 +70,26 @@ function PortfolioTable() {
         }
 
         setShowModal(true);
+    }
+
+    function addPortfolioItem(data) {
+        const newItem = {
+            title: data.title,
+            description: data.shortDescription,
+            longDescription: data.longDescription,
+            image: data.image,
+            technologies: data.techs
+        }
+    }
+
+    function editPortfolioItem(slug, data) {
+        const newItem = {
+            title: data.title,
+            description: data.shortDescription,
+            longDescription: data.longDescription,
+            image: data.image,
+            technologies: data.techs
+        }
     }
 
     useEffect(() => {
