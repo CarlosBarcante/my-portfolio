@@ -89,7 +89,7 @@ function PortfolioTable() {
             description: data.shortDescription,
             longDescription: data.longDescription,
             image: data.image,
-            technologies: data.techs
+            technologies: data.techs || {}
         }
 
         editItem(slug, newItem);

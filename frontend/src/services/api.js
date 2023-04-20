@@ -19,7 +19,23 @@ export function deleteItem(slug) {
 }
 
 export function editItem(slug, { title, description, longDescription, image, technologies }) {
-    console.log(`Editado: ${slug}`);
+    axios
+        .patch(`/api/portfolio/${slug}`, {
+            title,
+            description,
+            longDescription,
+            image,
+            technologies
+        })
+        .then(res => {
+            console.log(`editado: ${slug}`);
+            console.log(res);
+            return res;
+        })
+        .catch(error => {
+            console.log(error);
+            return error;
+        })
 }
 
 export function addItem({ title, description, longDescription, image, technologies }) {
