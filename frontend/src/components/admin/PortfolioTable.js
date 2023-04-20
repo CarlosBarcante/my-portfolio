@@ -22,7 +22,6 @@ function PortfolioTable() {
     }
 
     function handleAdd(slug, data) {
-        // function to create a new portfolio item to add to database
         addPortfolioItem(data);
     }
 
@@ -78,8 +77,10 @@ function PortfolioTable() {
             description: data.shortDescription,
             longDescription: data.longDescription,
             image: data.image,
-            technologies: data.techs
+            technologies: data.techs || {}
         }
+
+        addItem(newItem);
     }
 
     function editPortfolioItem(slug, data) {
@@ -90,6 +91,8 @@ function PortfolioTable() {
             image: data.image,
             technologies: data.techs
         }
+
+        editItem(slug, newItem);
     }
 
     useEffect(() => {
