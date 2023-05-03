@@ -72,27 +72,40 @@ function PortfolioTable() {
     }
 
     function addPortfolioItem(data) {
+        const techs = deleteTechID(data.techs);
+
         const newItem = {
             title: data.title,
             description: data.shortDescription,
             longDescription: data.longDescription,
             image: data.image,
-            technologies: data.techs || {}
+            technologies: techs
         }
 
         addItem(newItem);
     }
 
     function editPortfolioItem(slug, data) {
+        const techs = deleteTechID(data.techs);
+
         const newItem = {
             title: data.title,
             description: data.shortDescription,
             longDescription: data.longDescription,
             image: data.image,
-            technologies: data.techs || {}
+            technologies: techs
         }
 
         editItem(slug, newItem);
+    }
+
+    function deleteTechID(techs) {
+        const item = techs?.map(tech => {
+            delete tech._id;
+            return tech;
+        }) || {}
+
+        return item;
     }
 
     useEffect(() => {
