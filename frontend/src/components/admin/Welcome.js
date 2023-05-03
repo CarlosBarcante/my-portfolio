@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
+import { useApi } from '../../hooks/useApi';
+
 function Welcome() {
+    const { data } = useApi('/portfolio');
+
+    const [itemsAmount, setItemsAmount] = useState(0);
+    useEffect(() => {
+        setItemsAmount(data?.data?.length);
+    }, [data]);
+
     return (
         <Card>
             <h2>Bem Vindo!</h2>
             <h3>Total de itens no portfólio:</h3>
-            <p>4</p>
+            <p>{itemsAmount}</p>
         </Card>
     )
 }
