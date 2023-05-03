@@ -28,7 +28,6 @@ function Admin() {
             <div className="tab-nav">
                 <button className="tab-link active" onClick={event => openTab(event, 'home')}>Home</button>
                 <button className="tab-link" onClick={event => openTab(event, 'portfolio')}>Portfólio</button>
-                <button className="tab-link" onClick={event => openTab(event, 'technologies')}>Tecnologias</button>
             </div>
 
             <div id="home" className="tab-content active">
