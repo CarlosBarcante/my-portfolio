@@ -37,10 +37,6 @@ function Admin() {
             <div id="portfolio" className="tab-content">
                 <PortfolioTable />
             </div>
-
-            <div id="technologies" className="tab-content">
-                <h3>Tecnologias</h3>
-            </div>
         </AdminContainer >
     )
 }
