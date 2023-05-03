@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../styles";
 
+import Welcome from '../components/admin/Welcome';
 import PortfolioTable from "../components/admin/PortfolioTable";
 
 function openTab(event, tabName) {
@@ -31,7 +32,7 @@ function Admin() {
             </div>
 
             <div id="home" className="tab-content active">
-                <h3>Home</h3>
+                <Welcome />
             </div>
 
             <div id="portfolio" className="tab-content">
@@ -69,15 +70,15 @@ const AdminContainer = styled(Container)`
 
         .active {
             background-color: #ccc;
-            color: black;
+            color: #000;
         }
     }
 
     .tab-content {
         display: none;
-        padding: 1rem;
+        padding: .5rem;
         background-color: #ccc;
-        color: black;
+        color: #000;
     }
 
     .active{
