@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './components/Contact';
-import Admin from "./pages/Admin";
+// import Admin from "./pages/Admin";
 import PortfolioDetail from "./components/PortfolioDetail";
 
 // Navigation
@@ -34,7 +34,7 @@ function App() {
           <Route path={"/portfolio"} element={<Portfolio />}>
             <Route path={"/portfolio/:slug"} element={<PortfolioDetail />} />
           </Route>
-          <Route path="/admin" element={<Admin />} />
+          {/* <Route path="/admin" element={<Admin />} /> */}
         </Routes>
         {location.pathname !== '/admin' && <Contact />}
       </AppContainer>
