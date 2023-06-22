@@ -38,6 +38,7 @@ const StyledCard = styled.div`
         }
 
         .info{
+            height: 100%;
             text-align: left;
             background-color: #cccccc33;
             padding: .5rem;
