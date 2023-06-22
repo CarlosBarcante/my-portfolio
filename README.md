@@ -1,5 +1,3 @@
-#Em desenvolvimento...
-
 # Sobre o projeto
 
 [![NPM](https://img.shields.io/github/license/CarlosBarcante/todo-list)](https://github.com/CarlosBarcante/my-portfolio/blob/master/LICENSE)
@@ -16,7 +14,10 @@ A aplicação consiste em um site pessoal, com informações úteis sobre o dese
 - MongoDB
 
 ### Front-end
-- Em desenvolvimento (React, styled components) 
+- React
+- Styled components
+- Framer motion
+- Axios
 
 # Autor
 
